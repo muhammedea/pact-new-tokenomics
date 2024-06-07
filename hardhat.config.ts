@@ -39,8 +39,8 @@ const config: HardhatUserConfig = {
     ],
   },
   namedAccounts: {
-    deployer: 6,
-    signerAccount: 6,
+    deployer: 13,
+    signerAccount: 13,
   },
   networks: addForkConfiguration({
     hardhat: {

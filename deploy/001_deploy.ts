@@ -7,23 +7,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   console.log({ deployer });
 
-  const oldPact = '';
-  const tokenReceiver = '';
-  const operator = '';
+  const oldPact = '0x46c9757c5497c5b1f2eb73ae79b6b67d119b0b58';
 
   await deployments.deploy('PACTNewTokenDeployer', {
     contract: 'PACTNewTokenDeployer',
     from: deployer,
-    args: [
-      oldPact, // address _oldToken,
-      tokenReceiver, // address _tokenReceiver,
-      operator, // address _operator
-    ],
+    args: [oldPact],
     log: true,
     autoMine: true,
   });
 };
 
 export default func;
-func.id = 'deploy_test'; // id required to prevent reexecution
-func.tags = ['Test'];
+func.id = 'deploy_factory'; // id required to prevent reexecution
+func.tags = ['Factory'];
